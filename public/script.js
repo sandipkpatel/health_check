@@ -1,5 +1,26 @@
 angular.module("App", []).controller("healthController", healthCtrl);
 function healthCtrl($scope, $rootScope, $http, $interval) {
+  $scope.getCookie = function(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(";");
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == " ") {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  };
+
+  const logged = $scope.getCookie('authenticator');
+  if(!logged){
+    location = '/unauthorized';
+  }
+
   const host = location.protocol + "//" + location.hostname + ":3030";
   $scope.whit_ash_furnishings = {
     url: "https://furnishzingrms.com",

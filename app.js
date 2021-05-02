@@ -47,6 +47,10 @@ router.get('/health',function(req,res){
     res.sendFile(path.join(__dirname+'/index.html'));
 });
 
+router.get('/unauthorized', async (req, res) => {
+    res.send("Not authorized")
+})
+
 app.use(express.json()); 
 app.use(router)
 
