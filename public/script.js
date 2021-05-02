@@ -2,7 +2,7 @@ angular.module("App", []).controller("healthController", healthCtrl);
 function healthCtrl($scope, $rootScope, $http, $interval) {
   const host = location.protocol + "//" + location.hostname + ":3030";
   $scope.whit_ash_furnishings = {
-    url: "http://furnishzingrms.com",
+    url: "https://furnishzingrms.com",
     dir: "/root/code/furnishing/target/universal/furnishing-1.0-SNAPSHOT",
     port: "80",
     state: "NONE",
