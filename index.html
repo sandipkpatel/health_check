@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Health Check</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="script.js"></script>
+</head>
+<body ng-app="App">
+    <div ng-controller="healthController">
+    <div class="text-center">
+        <img height="150" src="https://furnishzingrms.com/admin/assets/img/logo.png"/>
+    </div>
+    <table class="health_view table-hover table-striped table-style">
+        <thead>
+          <tr>
+            <th>
+              Franchaise
+            </th>
+            <th>
+              Status
+            </th>
+            <th>
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Whit-Ash Furnishings <br/>
+              <a target="_blank" href="http://furnishzingrms.com/">http://furnishzingrms.com</a>
+            </td>
+            <td class="text-center">
+              <div ng-if="whit_ash_furnishings.state == 'UP'" class="health_up"></div>
+              <div ng-if="whit_ash_furnishings.state == 'DOWN'" class="health_down"></div>
+            </td>
+            <td class="text-center">
+              <button ng-disabled="whit_ash_furnishings.state == 'UP'" class="health_start" ng-click="server_start(whit_ash_furnishings)">START</button>
+              <button class="health_stop" ng-click="server_stop(whit_ash_furnishings)">STOP</button>
+              <button  class="health_restart" ng-click="server_restart(whit_ash_furnishings)">RE-START</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Development <br/>
+              <a target="_blank" href="http://104.238.179.127:8082/">http://104.238.179.127:8082</a>
+            </td>
+            <td class="text-center">
+              <div ng-if="development.state == 'UP'" class="health_up"></div>
+              <div ng-if="development.state == 'DOWN'" class="health_down"></div>
+            </td>
+            <td class="text-center">
+              <button ng-disabled="development.state == 'UP'" class="health_start" ng-click="server_start(development)">START</button>
+              <button class="health_stop" ng-click="server_stop(development)">STOP</button>
+              <button  class="health_restart" ng-click="server_restart(development)">RE-START</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Home Furnishing <br/>
+              <a target="_blank" href="http://104.238.179.127:8083/">http://104.238.179.127:8083</a>
+            </td>
+            <td class="text-center">
+              <div ng-if="home_furnishing.state == 'UP'" class="health_up"></div>
+              <div ng-if="home_furnishing.state == 'DOWN'" class="health_down"></div>
+            </td>
+            <td class="text-center">
+              <button ng-disabled="home_furnishing.state == 'UP'" class="health_start" ng-click="server_start(home_furnishing)">START</button>
+              <button class="health_stop" ng-click="server_stop(home_furnishing)">STOP</button>
+              <button  class="health_restart" ng-click="server_restart(home_furnishing)">RE-START</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Furniture on Sunset <br/>
+              <a target="_blank" href="http://104.238.179.127:8084/">http://104.238.179.127:8084</a>
+            </td>
+            <td class="text-center">
+              <div ng-if="furniture_on_sunset.state == 'UP'" class="health_up"></div>
+              <div ng-if="furniture_on_sunset.state == 'DOWN'" class="health_down"></div>
+            </td>
+            <td class="text-center">
+              <button ng-disabled="furniture_on_sunset.state == 'UP'" class="health_start" ng-click="server_start(furniture_on_sunset)">START</button>
+              <button class="health_stop" ng-click="server_stop(furniture_on_sunset)">STOP</button>
+              <button  class="health_restart" ng-click="server_restart(furniture_on_sunset)">RE-START</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>

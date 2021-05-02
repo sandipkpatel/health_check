@@ -1,0 +1,11 @@
+.health_view{width: 100%;background: #fff;}
+.health_view th{background: #cccccc;font-size: 20px;font-weight: bold;padding: 20px;}
+.health_view td{padding: 20px;font-weight: bold;}
+.health_up{    height: 30px;width: 30px;background: green;border-radius: 50%;     margin: 0 auto;}
+.health_down{    height: 30px;width: 30px;background: red;border-radius: 50%;     margin: 0 auto;}
+.health_start{background: green;color: #fff;padding: 10px;margin: 10px;font-size: 20px;}
+.health_stop{background: red;color: #fff;padding: 10px;margin: 10px;font-size: 20px;}
+.health_restart{background: #0c3d62;color: #fff;padding: 10px;margin: 10px;font-size: 20px;}
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+body{font-family: 'Oswald', sans-serif;background: #000;}
+.text-center{text-align: center;}

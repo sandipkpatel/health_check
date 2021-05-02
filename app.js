@@ -6,9 +6,10 @@ const port = 3030;
 const { exec } = require("child_process");
 const request = require('request');
 const cors = require('cors')
+const path = require('path');
 
 app.use(cors())
-
+app.use(express.static(__dirname + '/public'));
 
 router.post('/action', async (req, res) => {
     try{
@@ -17,13 +18,13 @@ router.post('/action', async (req, res) => {
         const action = req.body.action
         const live = exec(`sh ${action}.sh ${directory} ${port}`);
         live.stdout.on('data', (data)=>{
-            console.log(data); 
+            log(data); 
         });
         live.stderr.on('data', (data)=>{
-            console.error(`error is ${data}`);
+            log(`error is ${data}`);
         });
         live.on('close', (code) => {
-            console.log(`child process exited with code ${code}`);
+            log(`child process exited with code ${code}`);
         });
         res.send({status: 'SUCCESS'})
     }catch (e) {
@@ -41,6 +42,10 @@ router.post('/check', async (req, res) => {
         }
     })
 })
+
+router.get('/health',function(req,res){
+    res.sendFile(path.join(__dirname+'/index.html'));
+});
 
 app.use(express.json()); 
 app.use(router)
