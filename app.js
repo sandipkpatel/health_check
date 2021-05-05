@@ -28,7 +28,7 @@ router.post('/action', async (req, res) => {
         });
         res.send({status: 'SUCCESS'})
     }catch (e) {
-        res.status(400).send(e);
+        res.send({status: 'ERROR'})
     }
 });
 

@@ -35,16 +35,5 @@ else
     echo "done"
 fi
 
-kill -9 $(sudo lsof -t -i:443) || true
-if [ $? != 0 ]
-then
-    echo "failed!"
-    exit 0
-else
-    echo "done"
-fi
-
-
-
 echo "finished"
 exit 0
