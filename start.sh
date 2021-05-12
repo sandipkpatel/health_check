@@ -21,7 +21,8 @@ if [ $2 = 80 ]
 then
     ./furnishing -J-Xmx1000M -J-Xms1000M -Dhttp.port=$2 -Djavax.net.ssl.keyStore=/root/code/furnishing/ssl/a2032b2ccb8bab4189d8c32083fd8c3d.pfx -Djavax.net.ssl.keyStorePassword=furnishzing -Dplay.server.netty.maxInitialLineLength=1024000000 > /dev/null    
 else
-    ./furnishing -J-Xmx1000M -J-Xms1000M -Dhttps.port=$2 -Djavax.net.ssl.keyStore=/root/code/furnishing/ssl/a2032b2ccb8bab4189d8c32083fd8c3d.pfx -Djavax.net.ssl.keyStorePassword=furnishzing -Dplay.server.netty.maxInitialLineLength=1024000000 > /dev/null    
+    httpport=$(( $1 + 50 ))
+    ./furnishing -J-Xmx1000M -J-Xms1000M -Dhttp.port=$httpport -Dhttps.port=$2 -Djavax.net.ssl.keyStore=/root/code/furnishing/ssl/a2032b2ccb8bab4189d8c32083fd8c3d.pfx -Djavax.net.ssl.keyStorePassword=furnishzing -Dplay.server.netty.maxInitialLineLength=1024000000 > /dev/null    
 fi
 
 
