@@ -10,7 +10,7 @@ function healthCtrl($scope, $rootScope, $http, $interval) {
   };
 
   $scope.development = {
-    url: "http://104.238.179.127:8082",
+    url: "https://furnishzingrms.com:8082",
     dir:
       "/root/code/testArea/furnishing/target/universal/furnishing-1.0-SNAPSHOT",
     port: "8082",
@@ -18,7 +18,7 @@ function healthCtrl($scope, $rootScope, $http, $interval) {
   };
 
   $scope.home_furnishing = {
-    url: "http://104.238.179.127:8083",
+    url: "https://furnishzingrms.com:8083",
     dir:
       "/root/code/franchaise2/furniture/target/universal/furnishing-1.0-SNAPSHOT",
     port: "8083",
@@ -26,7 +26,7 @@ function healthCtrl($scope, $rootScope, $http, $interval) {
   };
 
   $scope.furniture_on_sunset = {
-    url: "http://104.238.179.127:8084",
+    url: "https://furnishzingrms.com:8084",
     dir:
       "/root/code/furnitureonsunset/furniture/target/universal/furnishing-1.0-SNAPSHOT",
     port: "8084",
